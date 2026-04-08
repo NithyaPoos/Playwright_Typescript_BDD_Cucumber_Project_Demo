@@ -1,0 +1,27 @@
+Notes :
+World → creates browser + page
+Hooks → open/close browser
+Steps → use this.page
+POM → receives a valid Playwright page
+Cucumber → finds and executes steps
+Feature → matches step definitions
+
+Cucumber is behavior‑driven and 
+it was created for non‑technical people (product owners, QA, business analysts) to read and write tests.
+The feature file describes behavior in plain English using gherkin syntax(Given when then)
+The step definitions contain the actual code
+Cucumber matches the English text to the step code
+Playwright runs inside the step definitions
+
+Run:
+npx cucumber-js --dry-run
+npx cucumber-js
+or npm test
+Cucumber will:
+Read all .feature files
+Find matching step definitions
+Execute the Playwright code inside them
+
+Feature file (.feature)	-Defines scenarios or describe behavior  in English
+Step definitions (.steps.ts)	-	Contains Playwright code(implement behavior)
+Playwright	-Automates the browser(Playwright runs inside those step definitions)
