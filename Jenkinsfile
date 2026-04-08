@@ -10,26 +10,26 @@ pipeline {
 
         stage('Install Node') {
             steps {
-                sh 'curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -'
-                sh 'sudo apt-get install -y nodejs'
+                bat 'node -v'
+                bat 'npm -v'
             }
         }
 
         stage('Install Dependencies') {
             steps {
-                sh 'npm install'
+                bat 'npm install'
             }
         }
 
         stage('Install Playwright Browsers') {
             steps {
-                sh 'npx playwright install --with-deps'
+                bat 'npx playwright install'
             }
         }
 
         stage('Run Tests') {
             steps {
-                sh 'npm test'
+                bat 'npm test'
             }
         }
     }
