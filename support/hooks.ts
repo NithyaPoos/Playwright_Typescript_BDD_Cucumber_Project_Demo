@@ -1,6 +1,6 @@
 import { Before, After } from "@cucumber/cucumber";
 
-Before(async function () {
+Before({ timeout: 20000 }, async function () {
   await this.openBrowser();
 });
 

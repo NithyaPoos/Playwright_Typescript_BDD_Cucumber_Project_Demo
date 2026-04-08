@@ -14,6 +14,7 @@ Cucumber matches the English text to the step code
 Playwright runs inside the step definitions
 
 Run:
+npx bddgen
 npx cucumber-js --dry-run
 npx cucumber-js
 or npm test
