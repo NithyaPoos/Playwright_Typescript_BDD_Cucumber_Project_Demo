@@ -1,9 +1,13 @@
 module.exports = {
   default: {
-    require: ["steps/*.ts", "support/*.ts"],
+    require: [
+      "steps/**/*.ts",
+      "support/world.ts",
+      "support/hooks.ts"
+    ],
+    requireModule: ["ts-node/register"],
+    paths: ["features/**/*.feature"],
     publishQuiet: true,
-    format: ["progress"],
-    paths: ["features/*.feature"],
-    requireModule: ["ts-node/register"]
+    timeout: 20000
   }
 };

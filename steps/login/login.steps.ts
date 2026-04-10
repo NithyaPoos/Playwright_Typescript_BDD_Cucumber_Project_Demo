@@ -1,6 +1,6 @@
 import { Given, When, Then } from "@cucumber/cucumber";
 import { expect } from "@playwright/test";
-import { LoginPage } from "../pages/LoginPage";
+import { LoginPage } from "../../pages/login/LoginPage";
 
 Given("I open the OrangeHRM login page", async function () {
   this.loginPage = new LoginPage(this.page);
