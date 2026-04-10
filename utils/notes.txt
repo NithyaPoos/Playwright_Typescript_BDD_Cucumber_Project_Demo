@@ -26,3 +26,27 @@ Execute the Playwright code inside them
 Feature file (.feature)	-Defines scenarios or describe behavior  in English
 Step definitions (.steps.ts)	-	Contains Playwright code(implement behavior)
 Playwright	-Automates the browser(Playwright runs inside those step definitions)
+
+const loginPage
+→ A local variable
+→ Exists only inside that one step
+→ Disappears immediately
+
+this.loginPage
+→ A shared variable
+→ Lives for the entire scenario
+→ Accessible in all steps
+→ Perfect for Page Objects
+Use this.loginPage when:
+You need the page object in multiple steps
+You want to store state across steps
+You want consistent behavior
+
+Use const loginPage when:
+Everything happens inside one step
+You don’t need to reuse the object
+
+Fixes:flaky test
+Increase Cucumber step timeout-setDefaultTimeout(20000); added to hooks.ts
+Add waits for page load and element visibility in steps and page objects
+2.toBeVisible({ timeout: 30000 }); added to step definition of expect
